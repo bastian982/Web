@@ -1,0 +1,138 @@
+*{/* Resetear estilos que vienen por default en el navegador */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{ /* Declaramos variables para reutilizar los colores */
+    --color_texto:#5c3d5b;
+    --color_elementos_fieldset:#4d3e6b;
+    --color_fieldset_boton:#f07360;
+}
+
+header{
+    display: flex; /* Visualización en un contenedor flexible */
+    justify-content: space-between; /* Distribuye uniformemente los elementos a lo largo del contenedor */
+    padding:10px;
+}
+
+#logo{
+    width: 80px; 
+    height: auto; /* En automático mantiene la proporción */
+    margin: 20px 25px 20px 15px;/* Top, right, bottom, left */
+}
+
+nav>ul{
+    list-style-type:none; /* Se eliminan los marcadores de lista */
+    display: flex;
+}
+
+/* Elementos de la barra de navegación */
+.elementos-navegacion{
+    margin: 20px 50px;
+    font-size: 1.3em; /* Unidad relativa, sugerida para las fuentes */
+    font-family: "Arvo", serif; /* Fuente personalizada tomada de google fonts */
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Enlaces dentro de los elementos de la barra de navegación */
+.elementos-navegacion a{
+    text-decoration: none; /* Elimina el subrayado de la etiqueta a */
+    color: var(--color_texto); /* Cambiar el color con una variable */
+}
+
+.elementos-navegacion a:hover{ /* Uso de la pseudo-clase hover(al pasar el mouse) */
+    color:#f07360;
+    text-decoration: underline overline;
+}
+
+h1{
+    color:var(--color_texto);
+    text-align: center;
+}
+
+form{
+    margin: 0 auto;
+    width: 70%; /* Ocupa el 70% del contenedor principal*/
+    max-width: 800px; /* Ancho máximo */
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+fieldset{
+    border-color: var(--color_fieldset_boton);
+    border-radius: 1.2em;
+    color: var(--color_elementos_fieldset);
+    margin: 20px;
+}
+
+legend{
+    text-align: left;
+    font-size: 1.6em;
+}
+
+/* Pseudoelemento */
+legend::first-letter{
+    color: var(--color_fieldset_boton); /* Establece el color de la primera letra utilizando la variable definida */
+}
+
+#datos-basicos,
+#datos-pedido,
+#datos-envio{
+    padding: 30px 50px;
+}
+
+#datos-basicos label,
+#datos-pedido label{
+    display: block; /* Hace que las etiquetas se muestren como elementos de bloque, así no utilizamos el br en html */
+}
+
+#datos-basicos input,
+#datos-pedido input{
+    border: 3px solid var(--color_elementos_fieldset);
+    width: 200px;
+    height: 30px;
+}
+
+/* Estilos a campos de entrada cuando estén focos */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus{
+    outline: none;
+    box-shadow: 5px 3px var(--color_elementos_fieldset);/* Agrega una sombra cuando se enfoca el campo */
+}
+
+#datos-pedido select[name="opciones-postre"]{
+    width: 200px;
+    height: 30px;
+    border: 3px solid var(--color_elementos_fieldset);
+}
+
+#datos-envio label{
+    display: inline-block;
+    padding: 2px;
+    margin:4px;
+}
+
+.terminos{
+    margin:20px;
+    color: var(--color_elementos_fieldset);
+    float:left;
+}
+
+button[type="submit"]{
+    width: 120px;
+    height: 20px;
+    float: right;
+    color: var(--color_elementos_fieldset);
+    background-color: var(--color_fieldset_boton);
+    border: 2px solid var(--color_elementos_fieldset);
+}
+
+button:active{
+    transform: scale(0.90); /* Reducir ligeramente el tañaño del botón cuando se active */
+}

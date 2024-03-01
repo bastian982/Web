@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="../css/formulario.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img id="logo" src="../img/cookie.png" alt="Logo de galleta mordida">
+        <nav>
+            <ul>
+                <li class="elementos-navegacion"><a href="/index.html" target="_blank"> Inicio </a></li>
+                <li class="elementos-navegacion"><a href="./especificidad.html"> Nosotros </a></li>
+                <li class="elementos-navegacion"><a href="#"> Contacto </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1> ¡Haz tu pedido! </h1>
+        <form action="https://formsubmit.co/tania.gayosso@idr.edu.mx" method="POST">
+            <fieldset id="datos-basicos">
+                <legend> Datos básicos </legend>
+                <!--Label asocia un texto descriptivo con el elemento de un formulario. Por ejemplo, aquí label asocia "Nombre completo" con el input siguiente.-->
+
+                <!--Puedes asociar label e input colocando la etiqueta input dentro de label, de esta manera.-->
+                <label for="nombre"> Nombre completo:</label>
+                <input name="nombre" id="nombre" type="text" placeholder="Leslie Rocha" required>
+                <!--El atributo name en la etiqueta <input> se utiliza para identificar el valor del campo de entrada cuando se envía el formulario.-->
+                <!--Adicional, es buena práctica colocar el atributo id en la etiqueta input, con el mismo valor del atributo for de la etiqueta label -->
+
+                <!--Otra forma de asociar label con input es colocando las etiquetas por separado, sin colocar input dentro de label.-->
+                
+
+                <label for="correo">Correo electrónico: </label>
+                <input name="correo" id="correo" type="email"  placeholder="tucorreo@correo.com">
+
+                
+                <label for="telefono">Número de teléfono:</label>
+                <input name="telefono" id="telefono" type="tel" required placeholder="552020626871">
+
+                <!-- Es una mala práctica usar placeholder como nombre del dato que necesito que ingrese mi usuario <input type="text" placeholder="Nombre completo">-->
+
+            </fieldset> 
+            <fieldset id="datos-pedido">
+                <legend> Datos del pedido </legend>
+               
+                <label for="opciones-postre"> ¿Qué tipo de postre necesitas?</label> 
+                <select name="opciones-postre" id="opciones-postre"> <!-- Opciones desplegables, pero hace que tu usuario haga scroll infinito hasta encontrar la opción deseada. En este caso, asl ser solo 4 opciones, es útil.-->
+                    <option value="Galletas"> Galletas </option>
+                    <option value="Pasteles"> Pasteles </option>
+                    <option value="Brownies"> Brownies </option>
+                    <option value="Arroz con leche"> Arroz con leche </option>
+                </select>
+
+                <!-- Con la siguiente opción, no se hace scroll infinito y el usuario puede poner las primeras letras del elemento para encontrar su opción.
+
+                <input list="opciones-postre-2">
+                <datalist id="opciones-postre-2">
+                    <option value="Galletas"> Galletas </option>
+                    <option value="Pasteles"> Pasteles </option>
+                    <option value="Brownies"> Brownies </option>
+                    <option value="Arroz con leche"> Arroz con leche </option>
+                </datalist>
+                -->
+                
+                <label for="piezas-postre">¿Cuántas unidades necesitas?</label>
+                <input name="piezas-postre" id="piezas-postre"
+                type="number" min="6" max="100" required placeholder="6">
+                
+                <label for="fecha-entrega">Fecha del evento:</label>
+                <input name="fecha-entrega" id="fecha-entrega" type="date">
+           </fieldset>
+            <fieldset id="datos-envio">
+                <legend>Datos del envío</legend>
+                <!--Elementos de tipo radio, para seleccionar una opción, pero se pueden seleccionar todas y eso no nos funciona-->
+                <p>Por favor, selecciona tu opción de envío preferida: </p>
+
+                <!--Asociamos las etiquetas input y label a través del mismo valor en el atributo id de input y en el for de label, de esta manera, podremos tocar el texto de label y se seleccionará el círculo.
+                Para solucionar la parte de que solo se seleccione un solo círculo y no todos, debemos colocar el mismo valor en el name de cada opción, en este caso "opciones-envio"-->
+
+                <input type="radio" id="opcion-envio1" name="opciones-envio">
+                <label for="opcion-envio1">Recoger en sucursal </label>
+                
+                <input type="radio" id="opcion-envio2" name="opciones-envio">
+                <label for="opcion-envio2">Envío a domicilio</label>
+                
+                <input type="radio" id="opcion-envio3" name="opciones-envio">
+                <label for="opcion-envio3">Punto de entrega</label>
+                
+            </fieldset>
+
+                <input name="terminos-condiciones" id="terminos-condiciones" type="checkbox">
+                <label for="terminos-condiciones" class="terminos">Acepto términos y condiciones</label>
+                
+                <!--Existe el input de tipo submit, que se renderiza como botón de envío, pero existe la etiqueta button, específica para esto-->
+                <button type="submit"> ¡Enviar ya! </button>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Estilos para el contenedor de las 4 cajas */
+
+.contenedor{
+    width: 300px;
+    margin: 100px auto;
+    border: 5px solid black;
+}
+
+/* Estilos de las cajas */
+
+.caja{
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    color: #10383C;
+    text-align: center;
+}
+
+#caja1{
+    background-color: palegoldenrod;
+    position: relative;
+}
+
+#caja2{
+    background-color: palegreen;
+    top: 200px;
+}
+
+#caja3{
+    background-color: paleturquoise;
+}
+
+#caja4{
+    background-color: palevioletred;
+}
